@@ -1,0 +1,21 @@
+{{ define "base" }}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+	<title>{{ template "title" }}</title>
+</head>
+<body>
+	<div class="pure-menu pure-menu-horizontal">
+	    <ul class="pure-menu-list">
+	        <li class="pure-menu-item"><a href="/" class="pure-menu-link">Фильмы</a></li>
+	        <li class="pure-menu-item"><a href="/login" class="pure-menu-link">
+	        	{{if eq .User.Name "" }} Войти {{else}} Профиль {{end}}
+	        </a></li>
+	    </ul>
+	</div>
+	{{ template "content" .}}
+</table>
+</body>
+</html>
+{{ end }}
